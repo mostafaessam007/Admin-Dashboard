@@ -5,13 +5,62 @@
 .container{
     display: grid;
     grid-template-columns: 1fr 5fr ;
-    
+    grid-template-areas: 1fr 4fr;
 }
 .header{
     background-color: #ffffff;
     grid-column: 2/3;
+    grid-row: 1/2;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.top-row, .bottom-row{
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+}
+.header-icons{
+    width: 30px;
+    height: 30px;
 }
 
+.search, .noti, .greeting, .buttons{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.greeting{
+    margin-left: 15px;
+}
+.search-bar{
+    background-color:#E2E8F0 ;
+    width: 400px;
+    height: 25px;
+    border-radius: 15px;
+}
+
+.small-pic{
+    border-radius: 100px;
+    width: 40px;
+    height: 40px;
+}
+
+.big-pic{
+    border-radius: 100px;
+    width: 50px;
+    height: 50px;
+}
+
+.header-btns{
+    background-color: #1992D4;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    width: 80px;
+    height: 30px;
+}
 .sidebar{
     background-color: #1992D4;
     grid-row-start: 1;
@@ -23,6 +72,8 @@
 .nav-tabs-wrapper{
      color: white;
      display: flex;
+     align-items: center;
+     gap: 10px;
 }
 .nav-icons{
     fill: white; 
