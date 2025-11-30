@@ -2,15 +2,25 @@
     margin: 0;
     padding: 0;
 }
-.container{
-    display: grid;
-    grid-template-columns: 1fr 5fr ;
-    grid-template-areas: 1fr 4fr;
+body{
+    background-color: #E2E8F0;
 }
+.container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar content";
+    min-height: 100vh;
+}
+
+.header { grid-area: header; }
+.sidebar { grid-area: sidebar; }
+.content { grid-area: content; }
 .header{
     background-color: #ffffff;
     grid-column: 2/3;
-    grid-row: 1/2;
     padding: 1em;
     display: flex;
     flex-direction: column;
@@ -21,7 +31,7 @@
     gap: 20px;
     justify-content: space-between;
 }
-.header-icons{
+.icons{
     width: 30px;
     height: 30px;
 }
@@ -36,12 +46,12 @@
 }
 .search-bar{
     background-color:#E2E8F0 ;
-    width: 400px;
+    width: 700px;
     height: 25px;
     border-radius: 15px;
 }
 
-.small-pic{
+.pic{
     border-radius: 100px;
     width: 40px;
     height: 40px;
@@ -63,7 +73,8 @@
 }
 .sidebar{
     background-color: #1992D4;
-    grid-row-start: 1;
+    grid-column: 1/2;
+    
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -84,6 +95,52 @@
     font-weight: bold;
 }
 .content{
-    background-color: #E2E8F0;
     grid-column: 2/3;
+    padding: 1em;
+    gap: 1em;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+
+.projects{
+    display: flex;
+    gap: 2em;
+    grid-column: 1/2;
+}
+.prj-right, .prj-left{
+    display: flex;
+   flex-direction: column;
+    gap: 1em;
+}
+.prj-card{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    border-left: 7px solid #F0B429;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.content-icons{
+    align-self: flex-end;
+}
+.side-content{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+.announcements, .trending{
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    width: 300px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.profile-wrapper{
+    display: flex;
+    gap: 1em;
 }
